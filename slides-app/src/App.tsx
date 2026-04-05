@@ -29,9 +29,9 @@ function App() {
 
   const slideTitles = [
     "", // Slide 1
-    "Training", // Slide 2
+    "", // Slide 2
     "Datasets & Preprocessing", // Slide 3
-    "Models & Architecture", // Slide 4
+    "Models & Training", // Slide 4
     "Results & Conclusions" // Slide 5
   ];
 
@@ -40,7 +40,7 @@ function App() {
       <div className="w-full min-h-screen bg-gray-50 overflow-x-hidden flex flex-col">
         {currentSlide === 1 && <TopNav variant="app" />}
         {currentSlide > 1 && <TopNav variant="title" title={slideTitles[currentSlide]} />}
-        <div className="flex-1">
+        <div className={`flex-1 ${currentSlide > 0 ? "pt-16" : ""}`}>
           <CurrentSlideComponent />
         </div>
         

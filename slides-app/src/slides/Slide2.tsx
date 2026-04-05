@@ -149,7 +149,7 @@ export function Slide2() {
               <Button
                 onClick={handleStartTraining}
                 disabled={isTraining}
-                className="h-11 px-8"
+                className="h-11 px-8 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)]"
               >
                 {isTraining ? "Training..." : "Start Training"}
               </Button>

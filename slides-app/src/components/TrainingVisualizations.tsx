@@ -333,7 +333,7 @@ function EmbeddingPanel({ embedding }: { embedding: Embedding2DData }) {
 export function TrainingVisualizations({ data }: { data?: TrainingVisualizationData | null }) {
   if (!data) {
     return (
-      <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+      <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-[0_0_20px_rgba(0,0,0,0.4)]">
         <h2 className="mb-5 text-2xl font-semibold text-slate-900">Training Visualizations</h2>
         <div className="rounded-xl border border-dashed border-gray-300 bg-slate-50 p-10 text-center">
           <h3 className="text-lg font-medium text-slate-900">No Visualization Data</h3>
@@ -346,7 +346,7 @@ export function TrainingVisualizations({ data }: { data?: TrainingVisualizationD
   }
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+    <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-[0_0_20px_rgba(0,0,0,0.4)]">
       <h2 className="mb-5 text-2xl font-semibold text-slate-900">Training Visualizations</h2>
       <Tabs defaultValue="metrics">
         <TabsList className="mb-6 grid h-14 w-full grid-cols-5 items-stretch gap-1 rounded-full bg-slate-100 p-1.5">

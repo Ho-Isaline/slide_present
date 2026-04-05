@@ -9,14 +9,14 @@ export function Slide5() {
 
   return (
     <div className="bg-gray-50 min-h-screen pb-24">
-      <div className="max-w-7xl mx-auto w-full py-12 px-6">
+      <div className="max-w-7xl mx-auto w-full py-6 px-6">
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+          <div className="lg:col-span-3 space-y-6">
             {/* Baseline Table */}
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-slate-800">Baseline (Linear, Hidden 64, Freeze All)</h3>
-              <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+              <h3 className="text-xl font-semibold mb-4 text-slate-800">Baseline (Linear, 64 Hidden Neurons, Freeze All)</h3>
+              <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-[0_0_20px_rgba(0,0,0,0.4)]">
                 <table className="w-full text-left border-collapse">
                   <thead className="bg-slate-50 border-b border-gray-200">
                     <tr>
@@ -33,26 +33,26 @@ export function Slide5() {
                       <th className="py-2 px-4 font-semibold text-slate-700">Avg Accuracy</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-200 text-slate-600 text-sm">
+                  <tbody className="divide-y divide-gray-200 text-slate-600">
                     <tr>
                       <td className="py-2 px-4 font-medium text-slate-900">Spam</td>
                       <td className="py-2 px-4"><MetricCell accuracy="99.2%" time="19s" /></td>
-                      <td className="py-2 px-4"><MetricCell accuracy="99.2%" time="12s" /></td>
+                      <td className="py-2 px-4"><MetricCell accuracy="99.2%" time="12s ⚡️" /></td>
                       <td className="py-2 px-4"><MetricCell accuracy="99.4%" time="23s" /></td>
                       <td className="py-2 px-4">99.3%</td>
                     </tr>
                     <tr>
                       <td className="py-2 px-4 font-medium text-slate-900">IMDB</td>
                       <td className="py-2 px-4"><MetricCell accuracy="87.1%" time="504s" /></td>
-                      <td className="py-2 px-4"><MetricCell accuracy="87.4%" time="308s" /></td>
-                      <td className="py-2 px-4"><MetricCell accuracy="91.0%" time="495s" /></td>
+                      <td className="py-2 px-4"><MetricCell accuracy="87.4%" time="308s ⚡️" /></td>
+                      <td className="py-2 px-4 text-green-600 bg-green-50"><MetricCell accuracy="91.0%" time="495s" /></td>
                       <td className="py-2 px-4">88.5%</td>
                     </tr>
-                    <tr className="bg-red-50">
-                      <td className="py-2 px-4 font-medium text-red-900">News 20</td>
+                    <tr className="bg-red-50/40">
+                      <td className="py-2 px-4 font-medium text-red-900">20 Newsgroups</td>
                       <td className="py-2 px-4 text-red-800"><MetricCell accuracy="61.1%" time="233s" /></td>
-                      <td className="py-2 px-4 text-red-800"><MetricCell accuracy="62.9%" time="143s" /></td>
-                      <td className="py-2 px-4 text-red-800"><MetricCell accuracy="54.6%" time="254s" /></td>
+                      <td className="py-2 px-4 text-red-800"><MetricCell accuracy="62.9%" time="143s ⚡️" /></td>
+                      <td className="py-2 px-4 text-red-800 bg-red-100/50"><MetricCell accuracy="54.6%" time="254s" /></td>
                       <td className="py-2 px-4 text-red-800">59.5%</td>
                     </tr>
                   </tbody>
@@ -62,11 +62,11 @@ export function Slide5() {
 
             {/* Improving News Table */}
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-slate-800">Improving News 20-Class</h3>
-              <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+              <h3 className="text-xl font-semibold mb-4 text-slate-800">Improving 20 Newsgroups Classification</h3>
+              <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-[0_0_20px_rgba(0,0,0,0.4)]">
                 <table className="w-full text-left border-collapse">
                   <thead className="bg-slate-50 border-b border-gray-200">
-                    <tr>
+                    <tr className="hover:bg-slate-50 transition-colors">
                       <th className="py-2 px-4 font-semibold text-slate-700">Config Change</th>
                       <th className="py-2 px-4 font-semibold text-slate-700">Best Model</th>
                       <th className="py-2 px-4 font-semibold text-slate-700">Accuracy</th>
@@ -74,48 +74,48 @@ export function Slide5() {
                       <th className="py-2 px-4 font-semibold text-slate-700">Time</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-200 text-slate-600 text-sm">
-                    <tr>
+                  <tbody className="divide-y divide-gray-200 text-slate-600">
+                    <tr className="hover:bg-slate-50 transition-colors">
                       <td className="py-2 px-4">Baseline</td>
                       <td className="py-2 px-4">DistilBERT</td>
                       <td className="py-2 px-4">62.9%</td>
                       <td className="py-2 px-4 text-gray-400">—</td>
                       <td className="py-2 px-4">143s</td>
                     </tr>
-                    <tr>
+                    <tr className="hover:bg-slate-50 transition-colors">
                       <td className="py-2 px-4">+ Aggressive Preprocessing</td>
                       <td className="py-2 px-4">DistilBERT</td>
                       <td className="py-2 px-4">63.1%</td>
                       <td className="py-2 px-4 text-green-600">+0.2%</td>
                       <td className="py-2 px-4">145s</td>
                     </tr>
-                    <tr>
-                      <td className="py-2 px-4">+ Hidden 64 → 256</td>
+                    <tr className="hover:bg-slate-50 transition-colors">
+                      <td className="py-2 px-4">+ 64 → 256 Hidden Neurons</td>
                       <td className="py-2 px-4">DistilBERT</td>
                       <td className="py-2 px-4">66.4%</td>
                       <td className="py-2 px-4 text-green-600">+3.5%</td>
                       <td className="py-2 px-4">143s</td>
                     </tr>
-                    <tr>
+                    <tr className="hover:bg-slate-50 transition-colors">
                       <td className="py-2 px-4">+ Linear → GRU</td>
                       <td className="py-2 px-4">DistilBERT</td>
                       <td className="py-2 px-4">72.8%</td>
                       <td className="py-2 px-4 text-green-600">+9.9%</td>
                       <td className="py-2 px-4">195s</td>
                     </tr>
-                    <tr>
-                      <td className="py-2 px-4">+ Unfreeze 3 layers</td>
+                    <tr className="hover:bg-slate-50 transition-colors">
+                      <td className="py-2 px-4">+ Freeze All → Unfreeze 3 layers</td>
                       <td className="py-2 px-4 font-semibold text-slate-900">BERT</td>
                       <td className="py-2 px-4">74.2%</td>
                       <td className="py-2 px-4 text-green-600">+11.3%</td>
-                      <td className="py-2 px-4">450s</td>
+                      <td className="py-2 px-4 text-red-800">450s 🐢</td>
                     </tr>
-                    <tr className="bg-blue-50/50">
-                      <td className="py-2 px-4 font-semibold text-slate-900">+ Unfreeze all</td>
+                    <tr className="hover:bg-slate-50 transition-colors">
+                      <td className="py-2 px-4 font-semibold text-slate-900">+ Freeze All → Unfreeze all</td>
                       <td className="py-2 px-4">DistilBERT</td>
                       <td className="py-2 px-4 font-bold text-slate-900">77.2%</td>
                       <td className="py-2 px-4 font-bold text-green-600">+14.3%</td>
-                      <td className="py-2 px-4 font-bold text-slate-900">670s</td>
+                      <td className="py-2 px-4 font-bold text-red-800">670s 🐢</td>
                     </tr>
                   </tbody>
                 </table>
@@ -123,32 +123,32 @@ export function Slide5() {
             </div>
           </div>
 
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             {/* Key Insights */}
-            <h3 className="text-2xl font-semibold mb-6 text-slate-800">Key Insights</h3>
+            <h3 className="text-xl font-semibold mb-4 text-slate-800">Key Insights</h3>
             <div className="grid grid-cols-1 gap-4">
-          <div className="bg-blue-50 p-5 rounded-xl border border-blue-100 shadow-sm">
+          <div className="bg-blue-50 p-5 rounded-xl border border-blue-100 shadow-sm hover:shadow-[0_0_20px_rgba(0,0,0,0.4)]">
             <p className="text-sm text-blue-900 leading-relaxed">
-              <strong className="block mb-1 text-base">Preprocessing barely helps Transformers</strong>
-              BERT-family models already understand natural language structure, so traditional cleaning has minimal impact.
+              <strong className="block mb-1 text-base">Model Size vs Efficiency Is Not Linear</strong>
+              Larger models do not guarantee better results; DistilBERT remains highly competitive while training much faster.
             </p>
           </div>
-          <div className="bg-indigo-50 p-5 rounded-xl border border-indigo-100 shadow-sm">
+          <div className="bg-indigo-50 p-5 rounded-xl border border-indigo-100 shadow-sm hover:shadow-[0_0_20px_rgba(0,0,0,0.4)]">
             <p className="text-sm text-indigo-900 leading-relaxed">
-              <strong className="block mb-1 text-base">DistilBERT is highly efficient</strong>
-              It offers the best balance, maintaining high performance while training significantly faster than larger models.
+              <strong className="block mb-1 text-base">Preprocessing Impact Depends on Model Family</strong>
+              Transformer models gain only marginally from aggressive text cleaning compared with traditional architectures.
             </p>
           </div>
-          <div className="bg-violet-50 p-5 rounded-xl border border-violet-100 shadow-sm">
+          <div className="bg-violet-50 p-5 rounded-xl border border-violet-100 shadow-sm hover:shadow-[0_0_20px_rgba(0,0,0,0.4)]">
             <p className="text-sm text-violet-900 leading-relaxed">
-              <strong className="block mb-1 text-base">Capacity must match complexity</strong>
-              Switching from Linear to GRU was essential to provide the capacity needed to separate 20 distinct classes.
+              <strong className="block mb-1 text-base">Classifier Capacity Must Match Task Complexity</strong>
+              Upgrading from Linear to GRU substantially improves difficult multi-class classification performance.
             </p>
           </div>
-          <div className="bg-fuchsia-50 p-5 rounded-xl border border-fuchsia-100 shadow-sm">
+          <div className="bg-fuchsia-50 p-5 rounded-xl border border-fuchsia-100 shadow-sm hover:shadow-[0_0_20px_rgba(0,0,0,0.4)]">
             <p className="text-sm text-fuchsia-900 leading-relaxed">
-              <strong className="block mb-1 text-base">The Accuracy vs. Time Trade-off</strong>
-              Fine-tuning all layers maximizes accuracy, but comes at the highest computational and time cost.
+              <strong className="block mb-1 text-base">Accuracy vs Time Trade-off Is Explicit</strong>
+              More aggressive fine-tuning delivers the highest accuracy, but with a steep increase in training time.
             </p>
           </div>
             </div>

@@ -8,7 +8,7 @@ type TopNavProps = {
 export function TopNav({ variant = "app", title }: TopNavProps) {
   if (variant === "title") {
     return (
-      <nav className="bg-white border-b border-gray-200 shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex h-16 items-center gap-8">
             <div className="flex items-center gap-2">
@@ -22,7 +22,7 @@ export function TopNav({ variant = "app", title }: TopNavProps) {
   }
 
   return (
-    <nav className="bg-white border-b border-gray-200 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex h-16 items-center gap-8">
           <div className="flex items-center gap-2">
