@@ -26,10 +26,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # 這裡刪掉了 cache: 'pnpm'，避免找不到 lockfile 而報錯
+          cache: 'pnpm' # 因為你的圖裡有 pnpm-lock.yaml，現在可以安全使用了
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm run build
@@ -37,7 +37,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # 確保你的 build 結果是在 dist 資料夾
+          path: './dist'
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
