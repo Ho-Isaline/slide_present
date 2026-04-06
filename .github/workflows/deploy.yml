@@ -1,26 +1,43 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
-    branches: ["main"] # 或是你的主要分支名稱
+    branches: ["main"]
+  workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2 # 因為圖片中你用 pnpm
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
         with:
           version: 8
-      - uses: actions/setup-node@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm run build
-      - uses: actions/upload-pages-artifact@v3
+          # 這裡刪掉了 cache: 'pnpm'，避免找不到 lockfile 而報錯
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
-      - uses: actions/deploy-pages@v4
+          path: './dist' # 確保你的 build 結果是在 dist 資料夾
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
