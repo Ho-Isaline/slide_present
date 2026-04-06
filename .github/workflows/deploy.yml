@@ -26,10 +26,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm' # 因為你的圖裡有 pnpm-lock.yaml，現在可以安全使用了
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        # 加上這個參數，就算地端沒傳 lockfile 上去也能跑
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build
         run: pnpm run build
@@ -40,5 +40,4 @@ jobs:
           path: './dist'
 
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
